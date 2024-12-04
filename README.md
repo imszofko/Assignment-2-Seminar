@@ -17,3 +17,8 @@ Objective is to create an R package with the group. The R package should be able
 
 
 - Export the table with differentially expressed genes to Excel and create plots to visualize the results of the enrichment analysis. Examples of functions to use are cneplot, dotplot and treeplot. The last one depends on a term similarity matrix, which is calculated by calling pairwise_termsim on the enrichment analysis results.
+
+
+### Contributors
+Sophia Arias (email: b22sopar@student.his.se)
+Natalia Medrano Do Nascimento (email: a22natme@student.his.se)
