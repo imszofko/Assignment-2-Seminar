@@ -6,7 +6,7 @@ Task in the mini-project is to create an R package that can perform enrichment a
 One member in the group starts by creating a GitHub repo, committing a README file and adding the other group members as collaborators. In order to make use of GitHub’s pull request feature (one of the grading criteria), make sure to work in separate Git branches asnew features are added, and later merge these into the main branch. The main goal for this first part is to understand how to create and set up a repository and afterwards to learn how to work together, on Github, with others when developing software.
 
 ## Second Objective
-Objective is to create an R package with the group. The R package should be able to
+Objective is to create an R package with the group. The R package should be able to:
 - Import RNA-seq count data into R and perform filtering to remove low-expressed genes. You will use the E-MTAB-2523 RNA-seq counts as a case study dataset when developing the package. This can be downloaded together with its sample table from the seminar page in Canvas. The dataset contains partially paired samples from colorectal carcinoma and health control tissue.
 
 
