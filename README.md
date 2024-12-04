@@ -20,5 +20,4 @@ Objective is to create an R package with the group. The R package should be able
 
 
 ### Contributors
-Sophia Arias (email: b22sopar@student.his.se)
-Natalia Medrano Do Nascimento (email: a22natme@student.his.se)
+Sophia Arias (email: b22sopar@student.his.se) and Natalia Medrano Do Nascimento (email: a22natme@student.his.se)
