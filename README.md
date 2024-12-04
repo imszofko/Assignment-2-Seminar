@@ -3,7 +3,8 @@ Group Work Repo for the class Methods and Tools in Software Development for Bioi
 
 ## First Objective 
 Task in the mini-project is to create an R package that can perform enrichment analysis on an RNA-seq dataset. The package should be based on the R packages edgeR, clusterProfiler, enrichplot, org.Hs.eg.db and openxlsx.
-One member in the group starts by creating a GitHub repo, committing a README file and adding the other group members as collaborators. In order to make use of GitHub’s pull request feature (one of the grading criteria), make sure to work in separate Git branches asnew features are added, and later merge these into the main branch. The main goal for this first part is to understand how to create and set up a repository and afterwards to learn how to work together, on Github, with others when developing software.
+One member in the group starts by creating a GitHub repo, committing a README file and adding the other group members as collaborators. In order to make use of GitHub’s pull request feature (one of the grading criteria), make sure to work in separate Git branches asnew features are added, and later merge these into the main branch. 
+- The main goal for this first part is to understand how to create and set up a repository and afterwards to learn how to work together, on Github, with others when developing software.
 
 ## Second Objective
 Objective is to create an R package with the group. The R package should be able to:
