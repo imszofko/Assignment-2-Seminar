@@ -8,13 +8,22 @@
 #BiocManager::install(c("edgeR", "clusterProfiler", "enrichplot", "org.Hs.eg.db"))
 
 #Load the required libraries
+install.packages("devtools")
+devtools::install_github("klutometis/roxygen")  #need to make sure first that Rtools is installed and up to date
+
+library(roxygen2)     #Developmental version of roxygen2
+library(devtools)
 library(edgeR)
 library(clusterProfiler)
 library(enrichplot)
 library(org.Hs.eg.db)
 library(openxlsx)
 library(DESeq2)
+library(AnnotationDbi)
 #Import count data
+#setwd("C:/School_Work/Software_Course/Assignment2_BI503G")
+#create("Assignment2")
+
 countTable <- read.table("E-MTAB-2523.counts.txt", 
                      header = TRUE, 
                      row.names = 1, 
@@ -30,7 +39,7 @@ sampleTable <- read.table("E-MTAB-2523_sample table.txt",
 print("Sample data imported successfully.")
 print(head(sampleTable))
 
-#Create a factor for the carcinome and healthy patients
+#Create a factor for the carcinoma and healthy patients
 
 disease <- factor(sampleTable$disease)
 sex <- factor(sampleTable$sex)
@@ -133,6 +142,22 @@ write.table(topRes, file = "DEGs.txt", sep = '\t',
 
 ##Perform ORA-analysis with the functions enrichGO and enrichKEGG in the clutserProfile package
 ##
+##Changing the symbol names to EntrezID names
+changeNames <- mapIds(org.Hs.eg.db,
+                      keys = rownames(topRes),
+                      keytype = "SYMBOL",
+                      column = "ENTREZID")
+topRes$EntrezIds = changeNames
 
+duplicated = topRes$EntrezIds[duplicated(topRes$EntrezIds)]
+paste0('Number of NA and duplicates: ', length(duplicated))
 
+duplicatedGeneEntrez = duplicated[!is.na(duplicated)]
+paste0('Number of Gene Entrez Ids: ', length(duplicatedGeneEntrez))
 
+NAs = duplicated[is.na(duplicated)]
+paste0('Number of NAs: ', length(NAs))
+
+geneEntrez = topRes$Entrez[!is.na(topRes$Entrez)] #No more NAs since there were no duplicate IDs to begin with 
+"***geneEntrez is JUST a list of the Entrez IDs. This array does not contain ANY numerical values
+    and ORA just the names I believe***"
