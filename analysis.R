@@ -25,16 +25,16 @@ individual <- factor(sampleTable$individual)
 
 # Filter out low count genes
 meanlog2CPM <- rowMeans(log2(cpm(countTable + 1)))
-countTable <- countTable[meanlog2CPM > 1, ]
+filterCounts <- countTable[meanlog2CPM > 1, ]
 
 # Perform statistical analysis to identify DEGs
-dds <- DESeqDataSetFromMatrix(countData = countTable, colData = sampleTable, design = ~disease)
+dds <- DESeqDataSetFromMatrix(countData = filterCounts, colData = sampleTable, design = ~disease)
 dds2 <- DESeq(dds)
 results <- results(dds2)
 summary(results)
 
 # Create a DGEList object and normalize the data
-dge <- DGEList(counts = countTable)
+dge <- DGEList(counts = filterCounts)
 dge <- calcNormFactors(dge)
 print("Data normalized.")
 
